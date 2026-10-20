@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      name="description"
+      content="Детальна інформація про твір мистецтва з колекції Art Institute of Chicago."
+    />
+    <meta property="og:title" content="Твір — Віртуальна галерея мистецтва" />
+    <meta
+      property="og:description"
+      content="Деталі твору: автор, дата, матеріал, розмір і зображення з музею."
+    />
+    <meta property="og:type" content="article" />
+    <title>Твір — Віртуальна галерея мистецтва</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти до основного змісту</a>
+
+    <header class="site-header">
+      <a class="logo" href="index.html">Art Gallery</a>
+      <nav aria-label="Основна навігація">
+        <ul class="nav-list">
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="artwork-page">
+      <p><a class="back-link" href="catalog.html">← До каталогу</a></p>
+      <div id="artwork-root" aria-live="polite"></div>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Дані:
+        <a href="https://api.artic.edu/docs/" target="_blank" rel="noopener"
+          >Art Institute of Chicago API</a
+        >
+      </p>
+    </footer>
+
+    <script type="module" src="/src/pages/artwork.ts"></script>
+  </body>
+</html>

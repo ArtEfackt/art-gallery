@@ -1,13 +1,66 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>art-gallery</title>
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      name="description"
+      content="Віртуальна галерея мистецтва: шукайте та переглядайте твори з колекції Art Institute of Chicago."
+    />
+    <meta property="og:title" content="Віртуальна галерея мистецтва" />
+    <meta
+      property="og:description"
+      content="Пошук і перегляд творів з відкритого API Art Institute of Chicago."
+    />
+    <meta property="og:type" content="website" />
+    <title>Віртуальна галерея мистецтва</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <a class="skip-link" href="#main">Перейти до основного змісту</a>
+
+    <header class="site-header">
+      <a class="logo" href="index.html">Art Gallery</a>
+      <nav aria-label="Основна навігація">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Головна</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Віртуальна галерея мистецтва</h1>
+        <p>
+          Досліджуйте колекцію Art Institute of Chicago: картини, скульптури та фотографії з усього
+          світу.
+        </p>
+        <form class="search-form" role="search" action="catalog.html">
+          <label for="search-input"
+            >Пошук творів
+            <input id="search-input" name="q" type="search" placeholder="Наприклад: Monet" />
+          </label>
+          <button type="submit">Шукати</button>
+        </form>
+      </section>
+
+      <section class="featured" aria-labelledby="featured-title">
+        <h2 id="featured-title">Добірка творів</h2>
+        <div id="featured-list" class="artwork-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Дані:
+        <a href="https://api.artic.edu/docs/" target="_blank" rel="noopener"
+          >Art Institute of Chicago API</a
+        >
+      </p>
+    </footer>
+
+    <script type="module" src="/src/pages/home.ts"></script>
   </body>
 </html>

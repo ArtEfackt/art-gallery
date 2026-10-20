@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      name="description"
+      content="Каталог творів мистецтва: пошук, фільтрація, сортування та перегляд колекції Art Institute of Chicago."
+    />
+    <meta property="og:title" content="Каталог — Віртуальна галерея мистецтва" />
+    <meta
+      property="og:description"
+      content="Шукайте твори за назвою чи автором, фільтруйте за типом і відкривайте деталі."
+    />
+    <meta property="og:type" content="website" />
+    <title>Каталог — Віртуальна галерея мистецтва</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти до основного змісту</a>
+
+    <header class="site-header">
+      <a class="logo" href="index.html">Art Gallery</a>
+      <nav aria-label="Основна навігація">
+        <ul class="nav-list">
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="catalog.html" aria-current="page">Каталог</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-head" aria-labelledby="catalog-title">
+        <h1 id="catalog-title">Каталог творів</h1>
+        <p>Шукайте роботи за назвою чи автором, фільтруйте за типом і відкривайте деталі.</p>
+
+        <form class="search-form" role="search">
+          <label for="search-input"
+            >Пошук творів
+            <input id="search-input" name="q" type="search" placeholder="Наприклад: Monet" />
+          </label>
+          <button type="submit">Шукати</button>
+        </form>
+      </section>
+
+      <section class="featured catalog" aria-labelledby="results-title">
+        <div class="catalog-toolbar">
+          <h2 id="results-title">Результати</h2>
+          <form class="filters">
+            <label for="type-select"
+              >Тип твору
+              <select id="type-select" name="type">
+                <option value="">Усі типи</option>
+              </select>
+            </label>
+            <label class="filters__check" for="has-image">
+              <input id="has-image" name="hasImage" type="checkbox" value="1" />
+              Лише з зображенням
+            </label>
+            <label for="sort-select"
+              >Сортування
+              <select id="sort-select" name="sort">
+                <option value="title">За назвою</option>
+                <option value="artist">За автором</option>
+                <option value="date">За датою</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <p id="results-meta" class="results-meta"></p>
+        <div id="catalog-list" class="artwork-grid" aria-live="polite"></div>
+        <nav id="pagination" class="pagination" aria-label="Пагінація"></nav>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Дані:
+        <a href="https://api.artic.edu/docs/" target="_blank" rel="noopener"
+          >Art Institute of Chicago API</a
+        >
+      </p>
+    </footer>
+
+    <script type="module" src="/src/pages/catalog.ts"></script>
+  </body>
+</html>
